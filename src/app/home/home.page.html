@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-img id="logo" slot="start" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEX///8BAAIAAADT09O0s7R7e3vq6urY2Ni4uLjh4eHs7Ozd3d2jo6O7u7sbGxugoKBnZ2dkZGReXl6pqalGRkb29vYwMDHKyso1NTU8PD1BQUFLS0tvb28WFhaQkJFYWFmGhocMDA1+fn4kJCWfZf1LAAAEW0lEQVR4nO3da1caMRCH8RDEImC9cPFCrajf/zt2V0A2e83sJjOT7f951YMc3d+ZuGkpRmMQQgghhBAqdz3dSl9C1K431to/0lcRsZvMN7F2I30d0cqAkzz7IH0lkToDM+K99LVE6QIcKbEIHCXRBY7we7EMHN0Uq8CREQtAW/jjeIhF4NvfERKdCV6bu9ERS0DjEMfwd9QK0Ixsig5wcXrwQqz+S2MxbewX98X7VDPBvMYpbt9tW1fsgK4agM3fi7vqvlncQu2cW9BRI7BpiutWYP5ZuAnttQAbiPedwhtmQ2utwPqF+tghnFhNd5sOYO0UkxJ2AuummJLQA1gzxbOwuk+oE9Zu9NXKW/9JaN9uSx2sMqEn0JiVO8Wz8Hf5ebfKhF5L9NjK+V5sFM51CQlAlzh7SENIArpEm4SQCHSJkwSEZKBDTEDYA1glahb2AlaIioXe+2A5l6hX2BtYIqoV9lyix4pErcJBQHfT0CkcCCwSdQoHAwtElcIAwAvRvpY/Ii8MAjwTa140FBcGAuYvJ+bNKo9LC4MBjVnO9n+eqg8LCwds9L7JCgNOsDFRIQdQVMgClBTyAAWFTEA5IRdQTMgGlBIy7IPnZISMQBkh3xI1MkJWoISQFyggZAbyC7mB7EJ2ILeQH8gs5NwHz7EKJYAX4TL+1xJYoqYgjP+WWxngjzD+W26FgOap4f2owZMCGsP0xmk5YLZMOYhLOeD3q+E/XzzW7UYU6BLj/FjYUmIfLLaOvFDFgbGnKLxEj8WcogpgTKISYDyiGmAsoiJgnNuNKmCMKSoDhp+ign2wXNgpKgSGnaK6JXos3BSVAt23+Q2ZolpgKKJiYOWnbXqlGhhiisqBw6eoHjh0iir3wXJDppgEcMgUE1iix/pOMRlg3ykmBOxHTArYh5gYkE5MDki93SQIpE0xkX2wnP8UEwX6TzHJJXrMj5gw0I+YNNCHmDiwm5g80D0M5rHy0REAXWJ5iqMAtk0x2X2wXNMURwNsmuKIgPVTdIDT7aK2dE7Dr/63TQE4sTWnbJ26V2a8et9lPee95L3mbbLePwqenLhwz9xobqKK2HZGZtGTET+LD7RlP6VVhe48r9ratXnzFn5Iswp9eV/1xljv52o6WZNy1Z1HFSYu3Jmp75MTFa6y227ryb2Xe5NKYee17/Nnb29XP91VW+2tWqH92u/3+Sb4vRt+74svz8fy3XK3X3t9tk/FwjA72EyxsHoKSp8glAhCWhBKBCEtCCWCkBaEEkFIC0KJIKQFoUQQ0oJQIghpQSgRhLQglAhCWhBKBCEtCCWCkBaEEkFIC0KJIKQFoUQQ0oJQIghpQSgRhLQglAhCWhBKBCEtCCWCkBaEEkFIC0KJIKQFoUQQ0oJQIghpQSgRhLT+I+H8SkvzKMLuc0Q4m8QQKgxCCE8dFAsPQYRP3ocycWftUxCheVRKtOF+e95Mem9o6BAKaMx2OdUXwy8hRwghhBBCXP0DiZNG6JnOKDoAAAAASUVORK5CYII="></ion-img>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card *ngFor="let imovel of imoveis">
+    <div>
+      <img src="{{imovel.img}}">
+    </div>
+    <ion-row>
+      <ion-col class="ion-padding-start">
+       <ion-text color="dark">   
+        <h1 class="teste">{{ imovel.bairro }}</h1>
+       </ion-text>
+      </ion-col>
+      <ion-col class="ion-padding-end">
+        <ion-text color="primary">
+          <h2 class="teste">{{ imovel.valor | currency:'BRL' }}</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    
+    <div class="ion-padding">
+    <ion-text color="medium">  
+      <h2 class="teste">{{ imovel.nome }}</h2>
+    </ion-text>
+    </div>
+
+  </ion-card>
+
 </ion-content>
+
