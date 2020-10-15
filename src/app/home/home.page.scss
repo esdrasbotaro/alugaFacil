@@ -1,9 +1,13 @@
-#logo {
-  weight: 25px;
-  height: 25px;
-  margin-top: 10px;
+.logo {
+  width: 2em;
+  margin-top: 5px;
 }
 
-.teste{
-  font-size: 16px;
+.card-valor {
+  font-size: medium;
+}
+
+ion-icon {
+  color: pink;
+  --ionicon-stroke-width: 23px;
 }

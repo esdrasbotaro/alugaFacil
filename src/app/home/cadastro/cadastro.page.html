@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    <ion-title>cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-product-form [imovel]="novoImovel" (formSubmitted)="handleFormSubmmit()"></app-product-form>
+</ion-content>
