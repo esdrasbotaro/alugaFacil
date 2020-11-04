@@ -1,0 +1,23 @@
+ion-list {
+    margin-bottom: 0;
+  
+    ion-item {
+      background: #FAFAFA;
+  
+      .title {
+        .pull-left {
+          max-width: 70%;
+        }
+  
+        .pull-right {
+          color: var(--ion-color-dark);
+        }
+      }
+    }
+  }
+
+  .logo {
+    width: 2em;
+    margin-top: 5px;
+  }
+  

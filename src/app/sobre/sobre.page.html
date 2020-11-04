@@ -1,9 +1,28 @@
-<ion-header>
+ <ion-header>
   <ion-toolbar>
-    <ion-title>sobre</ion-title>
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+    <ion-title color="primary">
+      Sobre
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding sobre">
 
+  <ion-list>
+    <div slot="center">
+      <img src="https://svgsilh.com/svg/146585-e91e63.svg" class="logo" alt="alugaFacil">
+    </div>
+    
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <div class="title">
+          <div slot="center" class="pull-left bold">AlugaFacil</div>
+        </div>
+        <div>
+          Empresa fundada em meio a pandemia com o objetivo de facilitar o contato entre anunciantes e interessados em alguar apartamentos em São Paulo.
+        </div>
+      </ion-label>
+    </ion-item> 
+  </ion-list>
 </ion-content>

@@ -1,3 +1,4 @@
+import { SobrePageModule } from './../sobre/sobre.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
@@ -19,6 +20,14 @@ const routes: Routes = [
       {
         path: 'alugar',
         loadChildren: () => import('./alugar/alugar.module').then( m => m.AlugarPageModule)
+      },
+      {
+        path: 'sobre',
+        loadChildren: () => import('../sobre/sobre.module').then( m => m.SobrePageModule)
+      },
+      {
+        path: 'contato',
+        loadChildren: () => import('../contato/contato.module').then( m => m.ContatoPageModule)
       }
     ]
   },
