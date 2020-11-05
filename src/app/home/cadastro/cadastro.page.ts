@@ -1,5 +1,6 @@
-import { Imovel } from './../alugar/alugar.page';
+import { ImovelService, Imovel } from './../../services/imovel.service';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,35 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPage implements OnInit {
 
-public novoImovel: Imovel = {
-  id: 0,
-  nome: '',
-  valor: 0,
-  like: false,
-  cep: '',
-  logradouro: '',
-  numero: '',
-  bairro: '',
-  cidade: '',
-  estado: '',
-  img: '',
-  m2: '',
-  numeroQuarto: 0,
-  numeroVagas: 0,
-  getEndereco:null,
-  getDetalhes:null,
-  mobiliado: false, 
-  proxEstacao: false, 
-  descricao: null
-}
+  public imovel: Imovel;
 
-  constructor() { }
+  constructor(
+    private imovelService: ImovelService,
+    private navCtrl: NavController
+  ) { }
 
   ngOnInit() {
+    this.imovel = this.imovelService.empty();
   }
 
-  public handleFormSubmmit(){
-    console.log('Imovel Cadastrado com Sucesso!', this.novoImovel);
+  save() {
+    this.imovelService.create(this.imovel);
+    this.navCtrl.back();
   }
 
 }

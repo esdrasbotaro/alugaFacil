@@ -1,4 +1,5 @@
-import { Imovel } from './../alugar/alugar.page';
+import { Imovel } from './../../services/imovel.service';
+
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,6 +10,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImovelDetailsComponent implements OnInit {
 
   @Input() imovel: Imovel;
+
+  public getEndereco() {
+    // tslint:disable-next-line: max-line-length
+    return this.imovel.logradouro + ', ' + this.imovel.numero + ' - ' + this.imovel.bairro + ', ' + this.imovel.cidade + ' - ' + this.imovel.estado;
+  }
+
+  public getDetalhes() {
+    return this.imovel.m2 + 'm² - ' + this.imovel.numeroQuarto + ' Quartos - ' + this.imovel.numeroVagas + ' Vagas';
+  }
+
 
   constructor() {
   }
