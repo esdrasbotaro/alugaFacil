@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AlugarPageRoutingModule } from './alugar-routing.module';
 
 import { AlugarPage } from './alugar.page';
+import { ImovelDetailsComponent } from '../imovel-details/imovel-details.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { AlugarPage } from './alugar.page';
     IonicModule,
     AlugarPageRoutingModule
   ],
-  declarations: [AlugarPage]
+  declarations: [AlugarPage, ImovelDetailsComponent]
 })
 export class AlugarPageModule {}

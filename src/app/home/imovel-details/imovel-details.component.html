@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+    <ion-title color="secondary">
+      {{ imovel.nome }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="light-bg" fullscreen>
+  
+  <img [src]="imovel.img" alt="">
+
+  <div class="price-info ion-padding" color="secondary">
+    <div class="pull-left">
+      <ion-text class="price" color="light">{{ imovel.valor | currency:'BRL':true:"1.0" }}</ion-text>
+      <ion-text color="light">/mês</ion-text>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <ion-grid class="border-bottom">
+    <ion-row>
+      <ion-col class="ion-text-center" *ngIf="imovel.numeroQuarto != null">
+        <ion-icon class="text-2x" name="bed-outline" color="medium"></ion-icon>
+        <ion-text class="service-name" color="dark">{{imovel.numeroQuarto}} Quartos</ion-text>
+      </ion-col>
+
+      <ion-col class="ion-text-center" *ngIf="imovel.numeroVagas != null">
+        <ion-icon class="text-2x" name="car-outline" color="medium"></ion-icon>
+        <ion-text class="service-name" color="dark">{{imovel.numeroVagas}} Vagas</ion-text>
+      </ion-col>
+
+      <ion-col class="ion-text-center" *ngIf="imovel.proxEstacao">
+        <ion-icon class="text-2x" name="bus-outline" color="medium"></ion-icon>
+        <ion-text class="service-name" color="dark">Estacão</ion-text>
+      </ion-col>
+
+      <ion-col class="ion-text-center" *ngIf="imovel.mobiliado">
+        <ion-icon class="text-2x" name="library-outline" color="medium"></ion-icon>
+        <ion-text class="service-name" color="dark">Mobiliado</ion-text>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <div class="border-bottom ion-padding light-bg">
+    <h6>Detalhes</h6>
+    <ion-text color="dark">{{ imovel.getDetalhes() }}</ion-text>
+
+    <h6>Descrição</h6>
+    <ion-text color="dark">{{ imovel.descricao }}</ion-text>
+  </div>
+
+  <div class="border-bottom ion-padding ion-no-margin">
+    <ion-text color="medium">
+      {{ imovel.getEndereco() }}
+    </ion-text>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

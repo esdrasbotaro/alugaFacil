@@ -24,7 +24,10 @@ public novoImovel: Imovel = {
   numeroQuarto: 0,
   numeroVagas: 0,
   getEndereco:null,
-  getDetalhes:null
+  getDetalhes:null,
+  mobiliado: false, 
+  proxEstacao: false, 
+  descricao: null
 }
 
   constructor() { }

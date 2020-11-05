@@ -1,0 +1,47 @@
+.price-info {
+  background: #cf5177;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 3rem;
+
+  .sale-price,
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .origin-price {
+    text-decoration: line-through;
+  }
+
+  button {
+    color: var(--ion-color-primary);
+  }
+}
+
+.service-name {
+  display: block;
+  font-size: 0.8em;
+}
+
+#map-detail {
+  width: 100%;
+  height: 200px;
+}
+
+.room-info {
+
+  .room-image {
+    width: 100%;
+    height: 120px;
+    background-size: 100% auto;
+    background-position: center;
+  }
+
+  .room-features {
+
+    ion-icon {
+      min-width: 1.5rem;
+      text-align: center;
+    }
+  }
+}
