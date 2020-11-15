@@ -11,6 +11,12 @@ export class ImovelDetailsComponent implements OnInit {
 
   @Input() imovel: Imovel;
 
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
   public getEndereco() {
     // tslint:disable-next-line: max-line-length
     return this.imovel.logradouro + ', ' + this.imovel.numero + ' - ' + this.imovel.bairro + ', ' + this.imovel.cidade + ' - ' + this.imovel.estado;
@@ -20,10 +26,11 @@ export class ImovelDetailsComponent implements OnInit {
     return this.imovel.m2 + 'm² - ' + this.imovel.numeroQuarto + ' Quartos - ' + this.imovel.numeroVagas + ' Vagas';
   }
 
-
-  constructor() {
+  public getWhatsapp(){
+    return 'https://api.whatsapp.com/send?phone=' + this.imovel.usuario.whatsapp + '&text= Olá ' + this.imovel.usuario.nome + ', teria um minuto pra falarmos sobre o' + this.imovel.nome + '?';
   }
 
-  ngOnInit() {
+  public getMapa() {
+    return 'https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x400&markers=color:red|' + this.getEndereco() + '&key=AIzaSyAVYmLs9uS6D1FLgs1vpjo4IF4ymcYfFGQ';
   }
 }

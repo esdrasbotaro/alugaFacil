@@ -1,3 +1,4 @@
+import { Usuario, UsuarioService } from './usuario.service';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
@@ -19,12 +20,15 @@ export interface Imovel {
   mobiliado: boolean;
   proxEstacao: boolean;
   descricao: string;
+  usuario: Usuario;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImovelService {
+
+  usuarioService = UsuarioService;
 
   constructor(private storage: Storage) {
     this.loadData();
@@ -33,7 +37,9 @@ export class ImovelService {
   private imoveis: Imovel[] = [
     {id: 0, nome: 'Apartamento com 2 Quartos', valor: 3000, logradouro: 'Rua Augusta', numero: '400', bairro: 'Consolação', estado: 'São Paulo',
     cidade: 'SP', img: 'https://s2.glbimg.com/S68qSscRNuEDNZ2vavmrtyUWfA8=/512x320/smart/e.glbimg.com/og/ed/f/original/2018/12/10/apartamento-pequeno-doob-arquitetura09.jpg',
-    m2: '45', numeroQuarto: 2, numeroVagas: 1, cep: '04905-000', mobiliado: false, proxEstacao: true, descricao: 'Lindo apartamento com dois quartos com espaço aberto e linda sacada.', like: false}
+    m2: '45', numeroQuarto: 2, numeroVagas: 1, cep: '04905-000', mobiliado: false, proxEstacao: true, descricao: 'Lindo apartamento com dois quartos com espaço aberto e linda sacada.', like: false,
+    usuario: {id: 0, nome: 'Daniel Victor de Souza', username: 'dsouza', password: '*****', email: 'souza.dvictor@gmail.com',
+    whatsapp: 5511959575401}}
   ];
 
   private async loadData() {
@@ -63,7 +69,9 @@ export class ImovelService {
       numeroVagas: 0,
       mobiliado: false,
       proxEstacao: false,
-      descricao: null
+      descricao: null,
+      usuario: {id: 0, nome: 'Daniel Victor de Souza', username: 'dsouza', password: '*****', email: 'souza.dvictor@gmail.com',
+      whatsapp: 5511959575401}
     };
   }
 

@@ -59,8 +59,12 @@
     </ion-text>
   </div>
 
+  <div class="border-bottom ion-padding ion-no-margin">
+    <img src="{{ getMapa() }}">
+  </div>
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button href={{getWhatsapp()}}>
       <ion-icon name="logo-whatsapp"></ion-icon>
     </ion-fab-button>
   </ion-fab>
